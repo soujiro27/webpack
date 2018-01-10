@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "build": "webpack index.js bundle.js"
+    "build": "webpack index.js bundle.js",
+    "build:local": "webpack"
   },
   "repository": {
     "type": "git",
