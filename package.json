@@ -1,0 +1,25 @@
+{
+  "name": "webpack-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Guía sencilla sobre Webpack que toca temas sobre su configuración, los cargadores existentes y buenos complementos",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "build": "webpack index.js bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaquinAraujo/webpack.git"
+  },
+  "author": "Joaquin Araujo <joaquinaraujojs@gmail.com> (https://twitter.com/JoaquinAraujoJS)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoaquinAraujo/webpack/issues"
+  },
+  "homepage": "https://github.com/JoaquinAraujo/webpack#readme",
+  "devDependencies": {
+    "standard": "^10.0.3",
+    "webpack": "^3.10.0"
+  }
+}
