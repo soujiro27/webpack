@@ -2,10 +2,13 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: path.join(__dirname, 'index.js'),
+  entry: {
+    index: path.join(__dirname, 'src', 'js', 'index.js'),
+    test: path.join(__dirname, 'src', 'js', 'test.js')
+  },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     // Here will be the loaders
@@ -21,6 +24,6 @@ module.exports = {
   },
   plugins: [
     // Here will be the imported plugins
-    new ExtractTextPlugin('bundle.css')
+    new ExtractTextPlugin('[name].bundle.css')
   ]
 }
