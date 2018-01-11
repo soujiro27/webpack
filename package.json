@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "standard",
     "build": "webpack index.js bundle.js",
-    "build:local": "webpack"
+    "build:local": "webpack",
+    "build:external": "webpack --config ./external/webpack.config.js"
   },
   "repository": {
     "type": "git",
