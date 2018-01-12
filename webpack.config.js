@@ -7,26 +7,36 @@ module.exports = {
     test: path.join(__dirname, 'src', 'js', 'test.js')
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].bundle.js'
-  }/*,
+    path: path.join(__dirname, 'dist', 'assets'),
+    filename: path.join('js', '[name].bundle.js')
+  },
   devServer: {
-    port: 3000,
-  }*/,
+    // contentBase: path.join('dist'),
+    port: 8080
+  },
   module: {
     // Here will be the loaders
     rules: [
       {
         test: /\.css$/, // File Type
-        use: ['style-loader', 'css-loader'] // Loader(s)
-        // use: ExtractTextPlugin.extract({ // Loader + Extractor Plugin
-        //   use: 'css-loader'
-        // })
+        // use: ['style-loader', 'css-loader'] // Loader(s)
+        use: ExtractTextPlugin.extract({ // Loader + Extractor Plugin
+          use: 'css-loader'
+        })
+      },
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015']
+          }
+        }
       }
     ]
-  }/*,
+  },
   plugins: [
     // Here will be the imported plugins
-    new ExtractTextPlugin('[name].bundle.css')
-  ]*/
+    new ExtractTextPlugin(path.join('css', '[name].bundle.css'))
+  ]
 }
